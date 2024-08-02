@@ -25,7 +25,6 @@ const userNameEl = document.querySelector(".username");
 
 let idx = 0;
 
-updateTestimonial();
 
 function updateTestimonial() {
     const {name, photoUrl, text} = testimonials[idx];
@@ -36,8 +35,8 @@ function updateTestimonial() {
     if (idx === testimonials.length) {
         idx = 0;
     }
-
-    setTimeout(() => {
-        updateTestimonial();
-    },1700);
 }
+
+setInterval(updateTestimonial, 1700);
+
+updateTestimonial();
